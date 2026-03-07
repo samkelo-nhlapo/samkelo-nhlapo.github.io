@@ -6,7 +6,6 @@
   <title>Samkelo Nhlapo · Software Developer & Data Analyst</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* (All previous styles are kept exactly the same) */
     * {
       margin: 0;
       padding: 0;
@@ -152,6 +151,8 @@
       transition: transform 0.2s, box-shadow 0.2s;
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project-card:hover {
@@ -174,6 +175,7 @@
     .project-content h3 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
+      color: #1e3a8a;
     }
 
     .project-content p {
@@ -196,22 +198,21 @@
       color: #1f2937;
     }
 
-    .project-links a {
-      text-decoration: none;
-      font-weight: 500;
-      margin-right: 1.2rem;
+    .project-links {
+      margin-top: auto;
+    }
+
+    .project-links span {
       color: #2563eb;
+      font-weight: 500;
+      font-size: 0.95rem;
     }
 
-    .project-links a i {
-      margin-right: 0.2rem;
+    .project-links i {
+      margin-left: 0.3rem;
+      font-size: 0.8rem;
     }
 
-    .project-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Screenshot gallery */
     .gallery {
       margin-top: 3rem;
     }
@@ -263,7 +264,6 @@
       color: #1e3a8a;
     }
 
-    /* New Database Section */
     .database {
       background: white;
       border-radius: 24px;
@@ -429,7 +429,14 @@
 </head>
 <body>
   <div class="container">
-    
+    <!-- Contact bar -->
+    <div class="contact-bar" id="contact">
+      <span><i class="fas fa-phone-alt"></i> (079) 286 3165</span>
+      <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i> Samkelo.nhlapo@gmail.com</a>
+      <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <span><i class="fas fa-map-marker-alt"></i> Soweto, 1804</span>
+    </div>
+
     <!-- Name & intro -->
     <div class="intro">
       <h1>Samkelo Nhlapo</h1>
@@ -465,12 +472,12 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Summary -->
     <section class="projects">
       <h2><i class="fas fa-code"></i> Featured Projects</h2>
       <div class="project-grid">
-
-        <!-- HealthcareForm - main project -->
+        <!-- HealthcareForm Card (links to healthcareform.html) -->
+         <!-- HealthcareForm - main project -->
         <div class="project-card">
           <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&auto=format&fit=crop" alt="HealthcareForm">
           <div class="project-content">
@@ -490,29 +497,27 @@
           </div>
         </div>
 
-        <!-- Financial Calculator (Flutter) -->
-        <div class="project-card">
+        <!-- Financial Calculator Card (links to financial-calculator.html) -->
+        <a href="financial-calculator.html" class="project-card">
           <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop" alt="Financial Calculator">
           <div class="project-content">
             <h3>Financial Calculator</h3>
-            <p>Ever wonder where your money goes each month? This Flutter app helps you track income, expenses, and savings to see exactly what you have left to spend or save. Features include local storage, theme switching, undo/redo history, and shareable summaries.</p>
+            <p>A Flutter app to track income, expenses, and savings – with local storage, dark mode, and undo history.</p>
             <div class="tech-tags">
               <span class="tech-tag">Flutter</span>
               <span class="tech-tag">Dart</span>
               <span class="tech-tag">Local Storage</span>
               <span class="tech-tag">Dark Mode</span>
-              <span class="tech-tag">i18n</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yourusername/FinancialCalculator" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+              <span>View project details <i class="fas fa-arrow-right"></i></span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
-    <!-- HealthcareForm Screenshot Gallery -->
+    <!-- HealthcareForm Screenshot Gallery (remains as preview) -->
     <section class="gallery">
       <h2><i class="fas fa-images"></i> HealthcareForm Screenshots</h2>
       <div class="gallery-grid">
@@ -551,7 +556,7 @@
       </div>
     </section>
 
-    <!-- NEW: Database Design & Data Analysis Section -->
+    <!-- Database Section (links to healthcareform.html) -->
     <section class="database">
       <h2><i class="fas fa-database"></i> Database Design & Data Analysis</h2>
       <div class="db-card">
@@ -564,13 +569,12 @@
         <p>Key data domains: <strong>Patient Hub</strong>, <strong>Medical Records</strong>, <strong>Forms & Submissions</strong>, <strong>Healthcare Services</strong>, <strong>Insurance & Billing</strong>, and <strong>Security & Access Control</strong>. Implemented robust audit logging, data integrity constraints, and optimized indexes for analytical queries.</p>
         <p>Skills demonstrated: Data modeling (3NF), T‑SQL querying, stored procedures, indexing strategies, data flow analysis, and designing for reporting and analytics. The schema supports complex reporting scenarios, including patient history, financial analysis, and compliance audits.</p>
         <div class="project-links">
-          <a href="#"><i class="fab fa-github"></i> View Schema Scripts</a>
-          <a href="#"><i class="fas fa-file-alt"></i> ER Diagram (PDF)</a>
+          <a href="healthcareform.html#database-schema"><span>View full schema details <i class="fas fa-arrow-right"></i></span></a>
         </div>
       </div>
     </section>
 
-    <!-- Certificates -->
+    <!-- Certificates, Education, Footer (unchanged) -->
     <section class="certificates">
       <h2><i class="fas fa-certificate"></i> Certifications</h2>
       <div class="cert-list">
@@ -601,13 +605,11 @@
       </div>
     </section>
 
-    <!-- Education -->
     <div class="education">
       <i class="fas fa-graduation-cap"></i>
       <p><strong>Bachelor of Arts in Human Resource Management</strong> — University of Johannesburg, 2017</p>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
       <p>© 2026 Samkelo Nhlapo — Built with HTML & CSS</p>
       <p>
