@@ -1,10 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name · Project Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #f9f9f9;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* about section */
+    .about {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #e5e5e5;
+      padding-bottom: 0.5rem;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* projects grid */
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card .content {
+      padding: 1.5rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .project-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: #e5e5e5;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .project-card .links a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+      margin-right: 1rem;
+    }
+
+    .project-card .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+      color: #777;
+    }
+
+    /* responsive adjustments */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 2.2rem; }
+      .about, .project-card .content { padding: 1.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is my website hosted on GitHub Pages.</p>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Your Name</h1>
+      <p>Developer & Creator · Building cool things</p>
+    </header>
+
+    <!-- About Me -->
+    <section class="about">
+      <h2>👋 About Me</h2>
+      <p>
+        I'm a passionate developer who loves turning ideas into reality. 
+        I specialize in frontend development and enjoy creating clean, user-friendly experiences. 
+        When I'm not coding, you can find me hiking, reading sci‑fi, or experimenting with new technologies.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+      <h2>🚀 My Projects</h2>
+      <div class="grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop" alt="Project 1">
+          <div class="content">
+            <h3>Project Alpha</h3>
+            <p>A web app that helps you track your daily habits with beautiful visualizations.</p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">Live Demo →</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1526498466588-37a0a9f7e5ab?w=800&auto=format&fit=crop" alt="Project 2">
+          <div class="content">
+            <h3>Project Beta</h3>
+            <p>Mobile‑first weather app with real‑time data and a minimal design.</p>
+            <div class="tags">
+              <span class="tag">Vue</span>
+              <span class="tag">Pinia</span>
+              <span class="tag">Chart.js</span>
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">Live Demo →</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop" alt="Project 3">
+          <div class="content">
+            <h3>Project Gamma</h3>
+            <p>Open‑source library for generating accessible color palettes.</p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Color science</span>
+            </div>
+            <div class="links">
+              <a href="#" target="_blank">Documentation →</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Your Name. Built with HTML & CSS.</p>
+      <p>
+        <a href="mailto:you@example.com">Email</a> · 
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a> · 
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
