@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samkelo Nhlapo · Software Developer</title>
-  <!-- Font Awesome for icons (optional) -->
+  <title>Samkelo Nhlapo · Software Developer & Data Analyst</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    /* (All previous styles are kept exactly the same) */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +26,6 @@
       margin: 0 auto;
     }
 
-    /* Header / Contact bar */
     .contact-bar {
       display: flex;
       flex-wrap: wrap;
@@ -57,7 +56,6 @@
       text-decoration: underline;
     }
 
-    /* Name & title */
     .intro {
       text-align: center;
       margin-bottom: 3rem;
@@ -81,7 +79,6 @@
       padding-bottom: 0.3rem;
     }
 
-    /* About section */
     .about {
       background: white;
       border-radius: 24px;
@@ -125,7 +122,6 @@
       font-weight: 500;
     }
 
-    /* Projects section */
     .projects {
       margin-bottom: 3rem;
     }
@@ -154,6 +150,8 @@
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.04);
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -170,6 +168,7 @@
 
     .project-content {
       padding: 1.5rem;
+      flex: 1;
     }
 
     .project-content h3 {
@@ -212,7 +211,108 @@
       text-decoration: underline;
     }
 
-    /* Certificates section */
+    /* Screenshot gallery */
+    .gallery {
+      margin-top: 3rem;
+    }
+
+    .gallery h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .gallery h2 i {
+      color: #2563eb;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .gallery-item .caption {
+      padding: 1rem;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .gallery-item .caption strong {
+      color: #1e3a8a;
+    }
+
+    /* New Database Section */
+    .database {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+
+    .database h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .database h2 i {
+      color: #2563eb;
+    }
+
+    .db-card {
+      border-left: 4px solid #2563eb;
+      padding-left: 1.5rem;
+    }
+
+    .db-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .db-stats span {
+      background: #eef2ff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      color: #1e3a8a;
+    }
+
+    .db-stats i {
+      margin-right: 0.4rem;
+    }
+
+    .database p {
+      color: #2d3e50;
+      margin-bottom: 1rem;
+    }
+
     .certificates {
       background: white;
       border-radius: 24px;
@@ -284,7 +384,6 @@
       text-decoration: underline;
     }
 
-    /* Education & footer */
     .education {
       background: white;
       border-radius: 24px;
@@ -324,49 +423,52 @@
     @media (max-width: 600px) {
       .contact-bar { flex-direction: column; align-items: center; gap: 0.8rem; border-radius: 30px; }
       .intro h1 { font-size: 2.5rem; }
-      .about, .certificates, .education { padding: 1.5rem; }
+      .about, .certificates, .education, .database, .gallery-item { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Contact bar -->
-    <!-- <div class="contact-bar">
+    <div class="contact-bar">
       <span><i class="fas fa-phone-alt"></i> (079) 286 3165</span>
       <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i> Samkelo.nhlapo@gmail.com</a>
       <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <span><i class="fas fa-map-marker-alt"></i> Soweto, 1804</span>
-    </div> -->
+    </div>
 
     <!-- Name & intro -->
     <div class="intro">
       <h1>Samkelo Nhlapo</h1>
-      <div class="title">Software Developer · C# .NET</div>
+      <div class="title">Software Developer · Data Analyst · C# .NET & Flutter</div>
     </div>
 
     <!-- About Me -->
     <section class="about">
       <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
       <p>
-        Innovative and results-driven software developer with a strong foundation in SQL, C# and the .NET framework. 
-        Proven track record in delivering efficient, maintainable solutions within collaborative, cross-functional teams. 
-        Eager to contribute to a forward-thinking organization that prioritizes creativity and problem-solving, 
-        while committed to continuous learning and professional growth.
+        Innovative and results-driven software developer with a strong foundation in C# and the .NET framework,
+        now expanding into cross-platform mobile development with Flutter. Proven track record in delivering efficient,
+        maintainable solutions within collaborative, cross-functional teams. Eager to contribute to a forward-thinking
+        organization that prioritizes creativity and problem-solving, while committed to continuous learning and professional growth.
       </p>
-            <div class="skills-grid">
+      <div class="skills-grid">
         <span class="skill-tag">C# / .NET</span>
         <span class="skill-tag">ASP.NET Core</span>
         <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">T‑SQL</span>
+        <span class="skill-tag">Data Modeling</span>
         <span class="skill-tag">Entity Framework</span>
         <span class="skill-tag">REST APIs</span>
         <span class="skill-tag">Angular</span>
+        <span class="skill-tag">Flutter</span>
+        <span class="skill-tag">Dart</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">Git</span>
         <span class="skill-tag">Azure basics</span>
         <span class="skill-tag">Docker</span>
         <span class="skill-tag">Kubernetes</span>
         <span class="skill-tag">JWT</span>
-        <span class="skill-tag">T‑SQL</span>
       </div>
     </section>
 
@@ -374,6 +476,7 @@
     <section class="projects">
       <h2><i class="fas fa-code"></i> Featured Projects</h2>
       <div class="project-grid">
+        <!-- HealthcareForm -->
         <!-- HealthcareForm - main project -->
         <div class="project-card">
           <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&auto=format&fit=crop" alt="HealthcareForm">
@@ -393,7 +496,8 @@
             </div>
           </div>
         </div>
-         <!-- Financial Calculator (Flutter) -->
+
+        <!-- Financial Calculator (Flutter) -->
         <div class="project-card">
           <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop" alt="Financial Calculator">
           <div class="project-content">
@@ -414,9 +518,46 @@
         </div>
       </div>
     </section>
-        <!-- You can add a third card if desired -->
+
+    <!-- HealthcareForm Screenshot Gallery -->
+    <section class="gallery">
+      <h2><i class="fas fa-images"></i> HealthcareForm Screenshots</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/screenshot-1.png" alt="Ops Dashboard" loading="lazy">
+          <div class="caption"><strong>Ops Dashboard</strong> – Active patients, triage, tasks, and safety alerts.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-2.png" alt="Patient Lookup" loading="lazy">
+          <div class="caption"><strong>Patient Lookup</strong> – Search by ID and access registration flow.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-3.png" alt="Patient Chart" loading="lazy">
+          <div class="caption"><strong>Patient Chart</strong> – Demographics, contact, safety context, and sidebar navigation.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-4.png" alt="Encounter Workspace" loading="lazy">
+          <div class="caption"><strong>Encounter Workspace</strong> – Chief complaint, objectives, assessment, and plan.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-5.png" alt="Orders & Results" loading="lazy">
+          <div class="caption"><strong>Orders & Results</strong> – Pending orders, recent results with critical values.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-6.png" alt="Audit Log" loading="lazy">
+          <div class="caption"><strong>Security Audit Log</strong> – Filterable timeline with actor, category, event, outcome.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-7.png" alt="Admin Command Center" loading="lazy">
+          <div class="caption"><strong>Governance Command Center</strong> – Role control, audit anomalies, data governance.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/screenshot-8.png" alt="Registration Flow" loading="lazy">
+          <div class="caption"><strong>Registration Flow</strong> – Multi‑step form with completion tracking.</div>
+        </div>
       </div>
     </section>
+
     <!-- NEW: Database Design & Data Analysis Section -->
     <section class="database">
       <h2><i class="fas fa-database"></i> Database Design & Data Analysis</h2>
@@ -435,6 +576,7 @@
         </div>
       </div>
     </section>
+
     <!-- Certificates -->
     <section class="certificates">
       <h2><i class="fas fa-certificate"></i> Certifications</h2>
@@ -472,7 +614,7 @@
       <p><strong>Bachelor of Arts in Human Resource Management</strong> — University of Johannesburg, 2017</p>
     </div>
 
-    <!-- Footer with additional links -->
+    <!-- Footer -->
     <footer class="footer">
       <p>© 2026 Samkelo Nhlapo — Built with HTML & CSS</p>
       <p>
