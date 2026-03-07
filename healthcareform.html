@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthcareForm · Samkelo Nhlapo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reuse most styles from index, with additions for project detail */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e1e2f;
+      background-color: #f4f7fb;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-bar a, .contact-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #2d3e50;
+      text-decoration: none;
+    }
+
+    .contact-bar i {
+      color: #2563eb;
+      width: 1.2rem;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .back-link i {
+      margin-right: 0.5rem;
+    }
+
+    .project-detail {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+
+    .project-detail h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+
+    .project-detail h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: #1e293b;
+    }
+
+    .project-detail p {
+      color: #2d3e50;
+      margin-bottom: 1rem;
+    }
+
+    .project-detail ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-detail li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-tag-large {
+      background: #eef2ff;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e3a8a;
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .project-screenshots img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      color: #6b7280;
+      border-top: 1px solid #e0e7ef;
+    }
+
+    .footer a {
+      color: #374151;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .footer a:hover {
+      color: #2563eb;
+    }
+
+    @media (max-width: 600px) {
+      .contact-bar { flex-direction: column; align-items: center; gap: 0.8rem; border-radius: 30px; }
+      .project-detail { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Contact bar -->
+    <div class="contact-bar">
+      <span><i class="fas fa-phone-alt"></i> (079) 286 3165</span>
+      <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i> Samkelo.nhlapo@gmail.com</a>
+      <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <span><i class="fas fa-map-marker-alt"></i> Soweto, 1804</span>
+    </div>
+
+    <!-- Back link -->
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+    <!-- HealthcareForm Project Detail -->
+    <section class="project-detail">
+      <h2>🏥 HealthcareForm</h2>
+      <p><strong>A full‑stack healthcare management system with SQL Server, ASP.NET Core (.NET 10) API, and Angular 20 frontend.</strong></p>
+      
+      <h3>Overview</h3>
+      <p>HealthcareForm is a comprehensive platform designed for healthcare providers to manage patient data, appointments, medical records, billing, and compliance. It features role‑based access control, JWT authentication, and a responsive Angular UI.</p>
+
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Patient Hub</strong> – Central record with demographics, medical history, allergies, medications, vaccinations, and lab results.</li>
+        <li><strong>Forms & Submissions</strong> – Dynamic form templates, submissions, field values, and attachments (intake, consent, etc.).</li>
+        <li><strong>Healthcare Services</strong> – Appointments, consultation notes (SOAP), referrals, and provider management.</li>
+        <li><strong>Insurance & Billing</strong> – Patient insurance, invoices, billing codes (ICD‑10, CPT), and payment tracking.</li>
+        <li><strong>Security & Access Control</strong> – User roles, permissions, and a comprehensive audit log (UserActivityAudit).</li>
+      </ul>
+
+      <h3 id="database-schema">Database Design (34 Tables, 3NF)</h3>
+      <p>The database is normalized to 3NF and includes:</p>
+      <ul>
+        <li><strong>Medical Records</strong>: MedicalHistory, Allergies, Medications, Vaccinations, LabResults</li>
+        <li><strong>Forms</strong>: FormTemplates, FormSubmissions, FormFieldValues, FormAttachments</li>
+        <li><strong>Services</strong>: HealthcareProviders, Appointments, ConsultationNotes, Referrals</li>
+        <li><strong>Insurance</strong>: InsuranceProviders, PatientInsurance, Invoices, BillingCodes</li>
+        <li><strong>Security</strong>: Users, Roles, Permissions, UserRoles, RolePermissions, UserActivityAudit</li>
+        <li><strong>Lookups</strong>: Gender, MaritalStatus, Countries, Provinces, Cities, Address, Phones, Emails</li>
+      </ul>
+      <p>Total indexes: 45+ – optimized for search performance on ID_Number, LastName, Status, and foreign keys. The schema supports complex reporting and analytics.</p>
+
+      <h3>Data Analysis Capabilities</h3>
+      <ul>
+        <li>Patient visit frequency and no‑show rates.</li>
+        <li>Prescribing patterns and medication adherence.</li>
+        <li>Revenue and outstanding invoice analysis.</li>
+        <li>Audit trail for compliance (HIPAA‑style).</li>
+        <li>Lab result trends over time.</li>
+      </ul>
+
+      <h3>Sample Query</h3>
+      <pre style="background: #f1f5f9; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+-- Count of patients with abnormal lab results by month
+SELECT 
+    YEAR(lr.CompletedDate) AS Year,
+    MONTH(lr.CompletedDate) AS Month,
+    COUNT(*) AS AbnormalResults
+FROM Profile.LabResults lr
+WHERE lr.Status = 'Abnormal'
+GROUP BY YEAR(lr.CompletedDate), MONTH(lr.CompletedDate)
+ORDER BY Year DESC, Month DESC;
+      </pre>
+
+      <h3>Technology Stack</h3>
+      <div>
+        <span class="tech-tag-large">ASP.NET Core (.NET 10)</span>
+        <span class="tech-tag-large">Angular 20</span>
+        <span class="tech-tag-large">SQL Server</span>
+        <span class="tech-tag-large">Entity Framework Core</span>
+        <span class="tech-tag-large">JWT Bearer</span>
+        <span class="tech-tag-large">REST API</span>
+        <span class="tech-tag-large">jQuery (legacy)</span>
+      </div>
+
+      <h3>Screenshots</h3>
+      <div class="project-screenshots">
+        <img src="images/screenshot-1.png" alt="Ops Dashboard">
+        <img src="images/screenshot-2.png" alt="Patient Lookup">
+        <img src="images/screenshot-3.png" alt="Patient Chart">
+        <img src="images/screenshot-4.png" alt="Encounter Workspace">
+        <img src="images/screenshot-5.png" alt="Orders & Results">
+        <img src="images/screenshot-6.png" alt="Audit Log">
+        <img src="images/screenshot-7.png" alt="Governance Command Center">
+        <img src="images/screenshot-8.png" alt="Registration Flow">
+      </div>
+
+      <h3>GitHub & Demo</h3>
+      <p>
+        <a href="https://github.com/yourusername/HealthcareForm" target="_blank"><i class="fab fa-github"></i> Repository</a> &nbsp;|&nbsp;
+        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo (coming soon)</a>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Samkelo Nhlapo — Built with HTML & CSS</p>
+      <p>
+        <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-file-pdf"></i> Resume</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
