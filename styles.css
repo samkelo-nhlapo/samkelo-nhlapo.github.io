@@ -560,6 +560,110 @@ pre {
   color: var(--text-secondary);
 }
 
+/* ... (existing styles from previous version remain exactly the same, up to the media query) ... */
+
+/* ========== HealthcareForm page specific ========== */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 16px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 3rem 0;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-image {
+  flex: 1 1 300px;
+}
+
+.feature-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-text {
+  flex: 1 1 300px;
+}
+
+.feature-text h3 {
+  margin-top: 0;
+}
+
+.callout {
+  background: var(--tag-bg);
+  border-left: 4px solid var(--accent);
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-weight: 500;
+}
+
+.callout i {
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+
+.annotated {
+  position: relative;
+  display: inline-block;
+}
+
+.annotated .label {
+  position: absolute;
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tech-icons span {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .feature-row,
+  .feature-row.reverse {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   .contact-bar {
     flex-direction: column;
