@@ -4,203 +4,216 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HealthcareForm · Samkelo Nhlapo</title>
+  <meta name="description" content="Detailed case study of HealthcareForm – a full‑stack healthcare management system with ASP.NET Core, Angular, and SQL Server.">
   <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css"> <!-- External CSS includes all styles -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional classes to replace inline styles */
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .callout-narrow {
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
+    <main>
+      <!-- Back link -->
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
 
-    <!-- Back link -->
-    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-
-    <!-- Hero section -->
-    <div class="hero">
-      <h1>🏥 HealthcareForm</h1>
-      <p class="title" style="font-size: 1.2rem; margin-bottom: 2rem;">A full‑stack healthcare management system</p>
-      <img src="images/healthcare-dashboard.png" alt="HealthcareForm Dashboard – overview of active patients, tasks, and alerts" 
-           srcset="images/healthcare-dashboard@2x.png 2x"
-           loading="lazy">
-      <div class="callout" style="max-width: 600px; margin: 1rem auto;">
-        <i class="fas fa-info-circle"></i> Dashboard shows real‑time patient metrics, safety alerts, and quick access to modules.
-      </div>
-    </div>
-
-    <!-- Overview -->
-    <section class="project-detail">
-      <h2>Overview</h2>
-      <p>HealthcareForm is a comprehensive platform designed for healthcare providers to manage patient data, appointments, medical records, billing, and compliance. It features role‑based access control, JWT authentication, and a responsive Angular UI.</p>
-    </section>
-
-    <!-- Database Section -->
-    <section class="database">
-      <h2><i class="fas fa-database"></i> Database Design & Data Analysis</h2>
-      <div class="db-card">
-        <p><strong>HealthcareForm Database Schema</strong> – Designed and implemented a comprehensive 34‑table SQL Server database in 3NF for a healthcare management system. This schema powers the entire application and demonstrates advanced data modeling, integrity, and analytical capabilities.</p>
-        <div class="db-stats">
-          <span><i class="fas fa-table"></i> 34 Tables</span>
-          <span><i class="fas fa-link"></i> 45+ Indexes</span>
-          <span><i class="fas fa-chart-line"></i> 5 Business Domains</span>
-        </div>
-        <p>Key data domains: <strong>Patient Hub</strong>, <strong>Medical Records</strong>, <strong>Forms & Submissions</strong>, <strong>Healthcare Services</strong>, <strong>Insurance & Billing</strong>, and <strong>Security & Access Control</strong>. Implemented robust audit logging, data integrity constraints, and optimized indexes for analytical queries.</p>
-        <p>Skills demonstrated: Data modeling (3NF), T‑SQL querying, stored procedures, indexing strategies, data flow analysis, and designing for reporting and analytics. The schema supports complex reporting scenarios, including patient history, financial analysis, and compliance audits.</p>
-        <div class="project-links">
-          <a href="healthcareform.html#database-schema"><span>View full schema details <i class="fas fa-arrow-right"></i></span></a>
+      <!-- Hero section -->
+      <div class="hero">
+        <h1>🏥 HealthcareForm</h1>
+        <p class="title hero-subtitle">A full‑stack healthcare management system</p>
+        <img src="images/healthcare-dashboard.png" alt="HealthcareForm Dashboard – overview of active patients, tasks, and alerts" 
+             srcset="images/healthcare-dashboard@2x.png 2x"
+             loading="lazy">
+        <div class="callout callout-narrow">
+          <i class="fas fa-info-circle"></i> Dashboard shows real‑time patient metrics, safety alerts, and quick access to modules.
         </div>
       </div>
-    </section>
 
-    <!-- Key Features with alternating visuals -->
-    <section class="project-detail">
-      <h2>Key Features</h2>
-      <div class="feature-grid">
+      <!-- Overview -->
+      <section class="project-detail">
+        <h2>Overview</h2>
+        <p>HealthcareForm is a comprehensive platform designed for healthcare providers to manage patient data, appointments, medical records, billing, and compliance. It features role‑based access control, JWT authentication, and a responsive Angular UI.</p>
+      </section>
 
-        <!-- Feature 1: Patient Hub (image left) -->
-        <div class="feature-row">
-          <div class="feature-image annotated">
-            <img src="images/patient-chart.png" alt="Patient Hub – demographics, contact, safety context" 
-                 srcset="images/patient-chart@2x.png 2x"
-                 loading="lazy">
-            <span class="label" style="top: 10px; left: 10px;">Demographics</span>
-            <span class="label" style="bottom: 10px; right: 10px;">Safety context</span>
-          </div>
-          <div class="feature-text">
-            <h3>🧑‍⚕️ Patient Hub</h3>
-            <p>Central record with demographics, medical history, allergies, medications, vaccinations, and lab results. All patient data in one place.</p>
-            <div class="callout">
-              <i class="fas fa-check-circle"></i> Complete 360° view – from emergency contact to latest lab results.
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 2: Forms Engine (image right) -->
-        <div class="feature-row reverse">
-          <div class="feature-image annotated">
-            <img src="images/registration-flow.png" alt="Dynamic Forms – multi‑step registration with completion tracking" 
-                 srcset="images/registration-flow@2x.png 2x"
-                 loading="lazy">
-            <span class="label" style="top: 10px; left: 10px;">Step 1: Demographics</span>
-            <span class="label" style="bottom: 10px; left: 10px;">Progress tracker</span>
-          </div>
-          <div class="feature-text">
-            <h3>📋 Forms & Submissions</h3>
-            <p>Dynamic form templates, submissions, field values, and attachments (intake, consent, etc.). Supports versioning and review workflow.</p>
-            <div class="callout">
-              <i class="fas fa-file-signature"></i> Draft → Submitted → Approved → Signed
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 3: Appointment & Consultation (image left) -->
-        <div class="feature-row">
-          <div class="feature-image annotated">
-            <img src="images/encounter-workspace.png" alt="Encounter Workspace – SOAP notes, orders, and reconciliation" 
-                 srcset="images/encounter-workspace@2x.png 2x"
-                 loading="lazy">
-            <span class="label" style="top: 10px; right: 10px;">Chief complaint</span>
-            <span class="label" style="bottom: 10px; left: 10px;">Assessment & Plan</span>
-          </div>
-          <div class="feature-text">
-            <h3>📅 Healthcare Services</h3>
-            <p>Appointments, consultation notes (SOAP), referrals, and provider management. Track visits, diagnoses, and follow‑ups.</p>
-            <div class="callout">
-              <i class="fas fa-stethoscope"></i> Integrated with ICD‑10 codes and medication orders.
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 4: Billing (image right) -->
-        <div class="feature-row reverse">
-          <div class="feature-image annotated">
-            <img src="images/billing.png" alt="Billing – invoices and insurance" 
-                 srcset="images/billing@2x.png 2x"
-                 loading="lazy">
-            <span class="label" style="top: 10px; left: 10px;">Invoice status</span>
-            <span class="label" style="bottom: 10px; right: 10px;">Patient responsibility</span>
-          </div>
-          <div class="feature-text">
-            <h3>💰 Insurance & Billing</h3>
-            <p>Patient insurance, invoices, billing codes (ICD‑10, CPT), and payment tracking. Supports multiple insurers and coordination of benefits.</p>
-            <div class="callout">
-              <i class="fas fa-file-invoice-dollar"></i> Auto‑calculate patient portion based on deductible & copay.
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 5: Security Audit (image left) -->
-        <div class="feature-row">
-          <div class="feature-image annotated">
-            <img src="images/audit-log.png" alt="Security Audit Log – filterable timeline of events" 
-                 srcset="images/audit-log@2x.png 2x"
-                 loading="lazy">
-            <span class="label" style="top: 10px; left: 10px;">Actor: sa</span>
-            <span class="label" style="bottom: 10px; right: 10px;">Outcome: Success</span>
-          </div>
-          <div class="feature-text">
-            <h3>🔐 Security & Access Control</h3>
-            <p>User roles, permissions, and a comprehensive audit log (UserActivityAudit). Track every access and modification for compliance.</p>
-            <div class="callout">
-              <i class="fas fa-shield-alt"></i> Fine‑grained permissions: Patient_Create, Appointment_Read, etc.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Database Design (with diagram) -->
-    <section class="project-detail" id="database-schema">
-      <h2><i class="fas fa-database"></i> Database Design (34 Tables, 3NF)</h2>
-      <div class="feature-row">
-        <div class="feature-image">
-          <img src="images/er-diagram.png" alt="Entity‑relationship diagram of HealthcareForm database"
-               srcset="images/er-diagram@2x.png 2x"
-               loading="lazy">
-        </div>
-        <div class="feature-text">
-          <p>The database is normalized to 3NF and includes six business domains:</p>
-          <ul>
-            <li><strong>Patient Hub</strong> – core patient record</li>
-            <li><strong>Medical Records</strong> – allergies, medications, lab results</li>
-            <li><strong>Forms</strong> – dynamic form engine</li>
-            <li><strong>Services</strong> – appointments, consultations, referrals</li>
-            <li><strong>Insurance & Billing</strong> – policies, invoices, codes</li>
-            <li><strong>Security</strong> – users, roles, permissions, audit log</li>
-          </ul>
+      <!-- Database Section -->
+      <section class="database">
+        <h2><i class="fas fa-database"></i> Database Design & Data Analysis</h2>
+        <div class="db-card">
+          <p><strong>HealthcareForm Database Schema</strong> – Designed and implemented a comprehensive 34‑table SQL Server database in 3NF for a healthcare management system. This schema powers the entire application and demonstrates advanced data modeling, integrity, and analytical capabilities.</p>
           <div class="db-stats">
             <span><i class="fas fa-table"></i> 34 Tables</span>
             <span><i class="fas fa-link"></i> 45+ Indexes</span>
+            <span><i class="fas fa-chart-line"></i> 5 Business Domains</span>
           </div>
-          <div class="callout">
-            <i class="fas fa-chart-line"></i> Optimized for analytical queries – patient visit trends, revenue analysis, compliance reports.
+          <p>Key data domains: <strong>Patient Hub</strong>, <strong>Medical Records</strong>, <strong>Forms & Submissions</strong>, <strong>Healthcare Services</strong>, <strong>Insurance & Billing</strong>, and <strong>Security & Access Control</strong>. Implemented robust audit logging, data integrity constraints, and optimized indexes for analytical queries.</p>
+          <p>Skills demonstrated: Data modeling (3NF), T‑SQL querying, stored procedures, indexing strategies, data flow analysis, and designing for reporting and analytics. The schema supports complex reporting scenarios, including patient history, financial analysis, and compliance audits.</p>
+          <div class="project-links">
+            <a href="healthcareform.html#database-schema"><span>View full schema details <i class="fas fa-arrow-right"></i></span></a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Technology Stack -->
-    <section class="project-detail">
-      <h2>⚙️ Technology Stack</h2>
-      <div class="tech-icons">
-        <span>ASP.NET Core (.NET 10)</span>
-        <span>Angular 20</span>
-        <span>SQL Server</span>
-        <span>Entity Framework Core</span>
-        <span>JWT Bearer</span>
-        <span>REST API</span>
-        <span>jQuery (legacy)</span>
-      </div>
-    </section>
+      <!-- Key Features with alternating visuals -->
+      <section class="project-detail">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
 
-    <!-- GitHub & Demo -->
-    <section class="project-detail">
-      <h3>GitHub & Demo</h3>
-      <p>
-        <a href="https://github.com/yourusername/HealthcareForm" target="_blank"><i class="fab fa-github"></i> Repository</a> &nbsp;|&nbsp;
-        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo (coming soon)</a>
-      </p>
-    </section>
+          <!-- Feature 1: Patient Hub (image left) -->
+          <div class="feature-row">
+            <div class="feature-image annotated">
+              <img src="images/patient-chart.png" alt="Patient Hub – demographics, contact, safety context" 
+                   srcset="images/patient-chart@2x.png 2x"
+                   loading="lazy">
+              <span class="label" style="top: 10px; left: 10px;">Demographics</span>
+              <span class="label" style="bottom: 10px; right: 10px;">Safety context</span>
+            </div>
+            <div class="feature-text">
+              <h3>🧑‍⚕️ Patient Hub</h3>
+              <p>Central record with demographics, medical history, allergies, medications, vaccinations, and lab results. All patient data in one place.</p>
+              <div class="callout">
+                <i class="fas fa-check-circle"></i> Complete 360° view – from emergency contact to latest lab results.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Forms Engine (image right) -->
+          <div class="feature-row reverse">
+            <div class="feature-image annotated">
+              <img src="images/registration-flow.png" alt="Dynamic Forms – multi‑step registration with completion tracking" 
+                   srcset="images/registration-flow@2x.png 2x"
+                   loading="lazy">
+              <span class="label" style="top: 10px; left: 10px;">Step 1: Demographics</span>
+              <span class="label" style="bottom: 10px; left: 10px;">Progress tracker</span>
+            </div>
+            <div class="feature-text">
+              <h3>📋 Forms & Submissions</h3>
+              <p>Dynamic form templates, submissions, field values, and attachments (intake, consent, etc.). Supports versioning and review workflow.</p>
+              <div class="callout">
+                <i class="fas fa-file-signature"></i> Draft → Submitted → Approved → Signed
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Appointment & Consultation (image left) -->
+          <div class="feature-row">
+            <div class="feature-image annotated">
+              <img src="images/encounter-workspace.png" alt="Encounter Workspace – SOAP notes, orders, and reconciliation" 
+                   srcset="images/encounter-workspace@2x.png 2x"
+                   loading="lazy">
+              <span class="label" style="top: 10px; right: 10px;">Chief complaint</span>
+              <span class="label" style="bottom: 10px; left: 10px;">Assessment & Plan</span>
+            </div>
+            <div class="feature-text">
+              <h3>📅 Healthcare Services</h3>
+              <p>Appointments, consultation notes (SOAP), referrals, and provider management. Track visits, diagnoses, and follow‑ups.</p>
+              <div class="callout">
+                <i class="fas fa-stethoscope"></i> Integrated with ICD‑10 codes and medication orders.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 4: Billing (image right) -->
+          <div class="feature-row reverse">
+            <div class="feature-image annotated">
+              <img src="images/billing.png" alt="Billing – invoices and insurance" 
+                   srcset="images/billing@2x.png 2x"
+                   loading="lazy">
+              <span class="label" style="top: 10px; left: 10px;">Invoice status</span>
+              <span class="label" style="bottom: 10px; right: 10px;">Patient responsibility</span>
+            </div>
+            <div class="feature-text">
+              <h3>💰 Insurance & Billing</h3>
+              <p>Patient insurance, invoices, billing codes (ICD‑10, CPT), and payment tracking. Supports multiple insurers and coordination of benefits.</p>
+              <div class="callout">
+                <i class="fas fa-file-invoice-dollar"></i> Auto‑calculate patient portion based on deductible & copay.
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 5: Security Audit (image left) -->
+          <div class="feature-row">
+            <div class="feature-image annotated">
+              <img src="images/audit-log.png" alt="Security Audit Log – filterable timeline of events" 
+                   srcset="images/audit-log@2x.png 2x"
+                   loading="lazy">
+              <span class="label" style="top: 10px; left: 10px;">Actor: sa</span>
+              <span class="label" style="bottom: 10px; right: 10px;">Outcome: Success</span>
+            </div>
+            <div class="feature-text">
+              <h3>🔐 Security & Access Control</h3>
+              <p>User roles, permissions, and a comprehensive audit log (UserActivityAudit). Track every access and modification for compliance.</p>
+              <div class="callout">
+                <i class="fas fa-shield-alt"></i> Fine‑grained permissions: Patient_Create, Appointment_Read, etc.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Database Design (with diagram) -->
+      <section class="project-detail" id="database-schema">
+        <h2><i class="fas fa-database"></i> Database Design (34 Tables, 3NF)</h2>
+        <div class="feature-row">
+          <div class="feature-image">
+            <img src="images/er-diagram.png" alt="Entity‑relationship diagram of HealthcareForm database showing 34 tables across six business domains"
+                 srcset="images/er-diagram@2x.png 2x"
+                 loading="lazy">
+          </div>
+          <div class="feature-text">
+            <p>The database is normalized to 3NF and includes six business domains:</p>
+            <ul>
+              <li><strong>Patient Hub</strong> – core patient record</li>
+              <li><strong>Medical Records</strong> – allergies, medications, lab results</li>
+              <li><strong>Forms</strong> – dynamic form engine</li>
+              <li><strong>Services</strong> – appointments, consultations, referrals</li>
+              <li><strong>Insurance & Billing</strong> – policies, invoices, codes</li>
+              <li><strong>Security</strong> – users, roles, permissions, audit log</li>
+            </ul>
+            <div class="db-stats">
+              <span><i class="fas fa-table"></i> 34 Tables</span>
+              <span><i class="fas fa-link"></i> 45+ Indexes</span>
+            </div>
+            <div class="callout">
+              <i class="fas fa-chart-line"></i> Optimized for analytical queries – patient visit trends, revenue analysis, compliance reports.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section class="project-detail">
+        <h2>⚙️ Technology Stack</h2>
+        <div class="tech-icons">
+          <span>ASP.NET Core (.NET 10)</span>
+          <span>Angular 20</span>
+          <span>SQL Server</span>
+          <span>Entity Framework Core</span>
+          <span>JWT Bearer</span>
+          <span>REST API</span>
+          <span>jQuery (legacy)</span>
+        </div>
+      </section>
+
+      <!-- GitHub & Demo -->
+      <section class="project-detail">
+        <h3>GitHub & Demo</h3>
+        <p>
+          <a href="https://github.com/yourusername/HealthcareForm" target="_blank"><i class="fab fa-github"></i> Repository</a> &nbsp;|&nbsp;
+          <span class="disabled-link">Live Demo (coming soon)</span> <!-- placeholder link removed -->
+        </p>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -209,7 +222,7 @@
         <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <!-- <a href="#"><i class="fas fa-file-pdf"></i> Resume</a> -->
+        <!-- Resume link removed -->
       </p>
     </footer>
   </div>
