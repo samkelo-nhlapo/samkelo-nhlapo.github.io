@@ -5,29 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samkelo Nhlapo · Software Developer & Data Analyst</title>
   <meta name="description" content="Samkelo Nhlapo's portfolio – software developer and data analyst specializing in C# .NET and Flutter. View projects, certifications, and skills.">
-  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter (matching FinCalc) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <main>
-      <!-- Name & intro -->
-      <div class="intro">
-        <h1>Samkelo Nhlapo</h1>
-        <div class="title">Software Developer · Data Analyst · C# .NET & Flutter</div>
-      </div>
+    <!-- Header with navigation (FinCalc style) -->
+    <header>
+      <nav>
+        <div class="logo">SN</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="mailto:Samkelo.nhlapo@gmail.com" class="btn-download"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Hire Me</a>
+      </nav>
+    </header>
 
-      <!-- About Me -->
-      <section class="about">
-        <h2><i class="fas fa-user-astronaut"></i> About Me</h2>
-        <p>
-          Innovative and results-driven software developer with a strong foundation in C# and the .NET framework,
-          now expanding into cross-platform mobile development with Flutter. Proven track record in delivering efficient,
-          maintainable solutions within collaborative, cross-functional teams. Eager to contribute to a forward-thinking
-          organization that prioritizes creativity and problem-solving, while committed to continuous learning and professional growth.
-        </p>
+    <main>
+      <!-- Hero Section (FinCalc style) -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Samkelo <span class="highlight">Nhlapo</span></h1>
+          <div class="hero-subtitle">
+            <span class="typed-text">Software Developer · Data Analyst · C# .NET & Flutter</span>
+          </div>
+          <p>Innovative and results-driven developer with a strong foundation in C# and the .NET framework, now expanding into cross-platform mobile development with Flutter.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary"><i class="fas fa-code"></i> View Work</a>
+            <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Profile or code illustration -->
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop" alt="Coding workspace" onerror="this.src='https://via.placeholder.com/400x500/1E1E1E/FF6B35?text=Samkelo+Nhlapo'">
+        </div>
+      </section>
+
+      <!-- About Section (Skills Grid) -->
+      <section id="about" class="about-section">
+        <h2 class="section-title"><i class="fas fa-user-astronaut"></i> About Me</h2>
+        <p class="section-subtitle">Passionate about building elegant solutions</p>
+        
+        <div class="about-content">
+          <p>Innovative and results-driven software developer with a strong foundation in C# and the .NET framework, now expanding into cross-platform mobile development with Flutter. Proven track record in delivering efficient, maintainable solutions within collaborative, cross-functional teams. Eager to contribute to a forward-thinking organization that prioritizes creativity and problem-solving, while committed to continuous learning and professional growth.</p>
+        </div>
+
         <div class="skills-grid">
           <span class="skill-tag">C# / .NET</span>
           <span class="skill-tag">ASP.NET Core</span>
@@ -48,13 +76,20 @@
         </div>
       </section>
 
-      <!-- Projects Summary -->
-      <section class="projects">
-        <h2><i class="fas fa-code"></i> Featured Projects</h2>
-        <div class="project-grid">
+      <!-- Featured Projects (FinCalc card style) -->
+      <section id="projects" class="projects-section">
+        <h2 class="section-title"><i class="fas fa-code"></i> Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications I've built</p>
+        
+        <div class="projects-grid">
           <!-- HealthcareForm project card -->
           <a href="healthcareform.html" class="project-card">
-            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&auto=format&fit=crop" alt="HealthcareForm dashboard preview" loading="lazy">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&auto=format&fit=crop" alt="HealthcareForm dashboard preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Details <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
             <div class="project-content">
               <h3>HealthcareForm</h3>
               <p>A healthcare management monorepo with SQL Server database, ASP.NET Core Web API (.NET 10), and Angular 20 frontend. Features JWT authentication and role-based authorization.</p>
@@ -65,72 +100,117 @@
                 <span class="tech-tag">JWT</span>
                 <span class="tech-tag">Entity Framework</span>
               </div>
-              <div class="project-links">
-                <span>View project details <i class="fas fa-arrow-right"></i></span>
-              </div>
             </div>
           </a>
 
           <!-- Financial Calculator project card -->
           <a href="financial-calculator.html" class="project-card">
-            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop" alt="Financial calculator app preview" loading="lazy">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop" alt="Financial calculator app preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Details <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
             <div class="project-content">
               <h3>Financial Calculator</h3>
-              <p>A Flutter app to track income, expenses, and savings – with local storage, dark mode, and undo history.</p>
+              <p>A Flutter app to track income, expenses, and savings – with local storage, dark mode, and undo history. Clean, intuitive interface for personal finance management.</p>
               <div class="tech-tags">
                 <span class="tech-tag">Flutter</span>
                 <span class="tech-tag">Dart</span>
                 <span class="tech-tag">Local Storage</span>
                 <span class="tech-tag">Dark Mode</span>
               </div>
-              <div class="project-links">
-                <span>View project details <i class="fas fa-arrow-right"></i></span>
-              </div>
             </div>
           </a>
         </div>
       </section>
 
-      <!-- Certificates -->
-      <section class="certificates">
-        <h2><i class="fas fa-certificate"></i> Certifications</h2>
-        <div class="cert-list">
-          <div class="cert-item">
-            <div class="cert-icon"><i class="fas fa-database"></i></div>
-            <div class="cert-details">
-              <h4>Developing SQL Server Databases</h4>
-              <p>Pluralsight Inc. · 2021<br>Database monitoring, lifecycle management, performance tuning, Azure DB performance</p>
-              <span class="course-link">Course Link →</span> <!-- placeholder replaced -->
+      <!-- Certificates (Tour-style items) -->
+      <section id="certificates" class="certificates-section">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+        <p class="section-subtitle">Continuous learning and professional development</p>
+
+        <!-- Certificate 1 -->
+        <div class="cert-item">
+          <div class="cert-image">
+            <div class="cert-icon-large">
+              <i class="fas fa-database"></i>
             </div>
           </div>
-          <div class="cert-item">
-            <div class="cert-icon"><i class="fas fa-code"></i></div>
-            <div class="cert-details">
-              <h4>Complete C# and Object-Oriented Programming</h4>
-              <p>Udemy Inc. · 2021<br>Exception handling, cryptography, LINQ, async programming, Azure functions</p>
-              <span class="course-link">Course Link →</span>
+          <div class="cert-content">
+            <h3>Developing SQL Server Databases</h3>
+            <p class="cert-meta">Pluralsight Inc. · 2021</p>
+            <p>Database monitoring, lifecycle management, performance tuning, Azure DB performance. Comprehensive training in SQL Server optimization and management.</p>
+            <div class="cert-link">
+              <span class="course-link"><i class="fas fa-external-link-alt"></i> View Certificate →</span>
             </div>
           </div>
-          <div class="cert-item">
-            <div class="cert-icon"><i class="fas fa-docker"></i></div>
-            <div class="cert-details">
-              <h4>Docker & Kubernetes: The Practical Guide</h4>
-              <p>Udemy Inc. · 2021<br>Data persistence, deployment strategies, Kubernetes networking</p>
-              <span class="course-link">Course Link →</span>
+        </div>
+
+        <!-- Certificate 2 (reverse layout) -->
+        <div class="cert-item reverse">
+          <div class="cert-image">
+            <div class="cert-icon-large">
+              <i class="fas fa-code"></i>
+            </div>
+          </div>
+          <div class="cert-content">
+            <h3>Complete C# and Object-Oriented Programming</h3>
+            <p class="cert-meta">Udemy Inc. · 2021</p>
+            <p>Exception handling, cryptography, LINQ, async programming, Azure functions. Mastered advanced C# concepts and modern development practices.</p>
+            <div class="cert-link">
+              <span class="course-link"><i class="fas fa-external-link-alt"></i> View Certificate →</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="cert-item">
+          <div class="cert-image">
+            <div class="cert-icon-large">
+              <i class="fas fa-docker"></i>
+            </div>
+          </div>
+          <div class="cert-content">
+            <h3>Docker & Kubernetes: The Practical Guide</h3>
+            <p class="cert-meta">Udemy Inc. · 2021</p>
+            <p>Data persistence, deployment strategies, Kubernetes networking. Hands-on experience with containerization and orchestration.</p>
+            <div class="cert-link">
+              <span class="course-link"><i class="fas fa-external-link-alt"></i> View Certificate →</span>
             </div>
           </div>
         </div>
       </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026 Samkelo Nhlapo — Built with HTML & CSS</p>
-      <p>
-        <a href="mailto:Samkelo.nhlapo@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <!-- Resume link removed (placeholder) -->
-      </p>
+      <!-- Contact / Call to Action (FinCalc CTA style) -->
+      <section id="contact" class="contact-section">
+        <div class="cta-section">
+          <h2>Let's build something amazing together</h2>
+          <p>Available for freelance work, collaborations, and full-time opportunities.</p>
+          <div class="cta-buttons">
+            <a href="mailto:Samkelo.nhlapo@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> Samkelo.nhlapo@gmail.com</a>
+            <a href="#" class="btn-primary"><i class="fas fa-file-pdf"></i> Download Resume</a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/samkelo-nhlapo-6131bb118/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-dev"></i></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (FinCalc style) -->
+    <footer>
+      <div class="logo" style="margin-bottom: 16px;">Samkelo Nhlapo</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p>© 2026 Samkelo Nhlapo — Built with <i class="fas fa-heart" style="color: #FF6B35;"></i> using HTML & CSS</p>
     </footer>
   </div>
 </body>
