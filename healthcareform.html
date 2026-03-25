@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,123 +104,72 @@
     </footer>
   </div>
 
+  <!-- Modal container (hidden initially) -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
   <script>
     (function() {
-      // Lightbox system: double-click images to enlarge
-      let activeLightbox = null;
+      // Get all images that should be zoomable
+      const images = document.querySelectorAll('.hero-image img, .feature-image img');
+      
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+      const closeBtn = document.querySelector('.modal-close');
 
-      function closeLightbox() {
-        if (activeLightbox) {
-          if (window.__lightboxEscHandler) {
-            document.removeEventListener('keydown', window.__lightboxEscHandler);
-            window.__lightboxEscHandler = null;
-          }
-          activeLightbox.classList.remove('active');
-          setTimeout(() => {
-            if (activeLightbox && activeLightbox.parentNode) {
-              activeLightbox.parentNode.removeChild(activeLightbox);
-            }
-            activeLightbox = null;
-          }, 200);
-          document.body.classList.remove('lightbox-open');
-        }
+      // Helper: open modal with given image
+      function openModal(imgElement) {
+        modal.style.display = 'flex';
+        modalImg.src = imgElement.src;
+        modalImg.alt = imgElement.alt;
+        modalCaption.textContent = imgElement.alt || 'Image preview';
+        document.body.style.overflow = 'hidden'; // prevent scrolling
       }
 
-      function showLightbox(imageSrc, imageAlt) {
-        if (activeLightbox) {
-          closeLightbox();
-          setTimeout(() => createAndShowLightbox(imageSrc, imageAlt), 30);
-        } else {
-          createAndShowLightbox(imageSrc, imageAlt);
-        }
+      // Close modal
+      function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
       }
 
-      function createAndShowLightbox(src, altText) {
-        const overlay = document.createElement('div');
-        overlay.className = 'image-lightbox';
-        
-        const container = document.createElement('div');
-        container.className = 'lightbox-container';
-        
-        const imgElement = document.createElement('img');
-        imgElement.src = src;
-        imgElement.alt = altText || 'Enlarged view';
-        imgElement.className = 'lightbox-image';
-        
-        const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = '&times;';
-        closeBtn.className = 'lightbox-close';
-        closeBtn.setAttribute('aria-label', 'Close enlarged image');
-        
-        const caption = document.createElement('div');
-        caption.className = 'lightbox-caption';
-        caption.textContent = altText && altText.trim() !== '' ? altText : 'Image preview · double-click anywhere outside to close';
-        
-        container.appendChild(imgElement);
-        container.appendChild(closeBtn);
-        container.appendChild(caption);
-        overlay.appendChild(container);
-        document.body.appendChild(overlay);
-        activeLightbox = overlay;
-        
-        void overlay.offsetWidth;
-        overlay.classList.add('active');
-        document.body.classList.add('lightbox-open');
-        
-        overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) closeLightbox();
-        });
-        
-        closeBtn.addEventListener('click', function(e) {
+      // Event: double-click on image
+      images.forEach(img => {
+        img.addEventListener('dblclick', (e) => {
           e.stopPropagation();
-          closeLightbox();
+          openModal(img);
         });
         
-        container.addEventListener('click', function(e) {
-          e.stopPropagation();
+        // Touch double-tap detection for mobile
+        let lastTap = 0;
+        img.addEventListener('touchend', (e) => {
+          const currentTime = new Date().getTime();
+          const tapLength = currentTime - lastTap;
+          if (tapLength < 500 && tapLength > 0) {
+            // Double-tap detected
+            e.preventDefault();
+            openModal(img);
+          }
+          lastTap = currentTime;
         });
-        
-        function escHandler(e) {
-          if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Close modal when clicking on background or close button
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === closeBtn) {
+          closeModal();
         }
-        window.__lightboxEscHandler = escHandler;
-        document.addEventListener('keydown', window.__lightboxEscHandler);
-      }
+      });
 
-      function initDoubleClickEnlarge() {
-        const heroImages = document.querySelectorAll('.hero-image img');
-        const featureImages = document.querySelectorAll('.feature-image img');
-        const allTargetImages = [...heroImages, ...featureImages];
-        
-        allTargetImages.forEach(img => {
-          if (img._dblClickEnlargeHandler) {
-            img.removeEventListener('dblclick', img._dblClickEnlargeHandler);
-          }
-          const handler = function(event) {
-            event.stopPropagation();
-            showLightbox(this.src, this.alt || 'High-resolution view');
-          };
-          img._dblClickEnlargeHandler = handler;
-          img.addEventListener('dblclick', handler);
-          if (!img.getAttribute('title')) {
-            img.setAttribute('title', 'Double-click to enlarge');
-          }
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initDoubleClickEnlarge);
-      } else {
-        initDoubleClickEnlarge();
-      }
-
-      // MutationObserver for dynamically added images (safety)
-      if (window.MutationObserver) {
-        const observer = new MutationObserver(() => {
-          initDoubleClickEnlarge();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-      }
+      // ESC key closes modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          closeModal();
+        }
+      });
     })();
   </script>
 </body>
